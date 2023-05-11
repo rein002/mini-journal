@@ -4,9 +4,19 @@ services:
   app:
     ports:
       - "80:80"
+      - "5173:5173"
     build:
       context: ./docker
       dockerfile: "Dockerfile.prod"
     container_name: app
     volumes:
       - ./src:/var/www/html
+      - node_modules:/var/www/html/mini-journal/node_modules
+
+volumes:
+  node_modules:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${NODE_MODULES_DIRECTORY}
+      o: bind
