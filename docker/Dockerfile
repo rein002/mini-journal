@@ -19,6 +19,10 @@ libpng-dev \
 libpq-dev \
 && docker-php-ext-install pdo_mysql
 
+# Xdebugをインストール
+RUN pecl install xdebug \
+&& docker-php-ext-enable xdebug
+
 # Laravelで必要になるmodRewriteを有効化するため、mods-enabledからmods-available/rewrite.loadへのシンボリックリンクを貼る
 # これをしておかないと、Laravelのリダイレクト処理が正しく行われなくなってしまう
 RUN mv /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled
