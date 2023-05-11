@@ -10,5 +10,3 @@ services:
     container_name: app
     volumes:
       - ./src:/var/www/html
-    depends_on:
-      - db
