@@ -1,5 +1,7 @@
 FROM php:8.1-apache
 
+WORKDIR /var/www/html/mini-journal
+
 ADD /app/php.ini /usr/local/etc/php/
 ADD /app/000-default.conf /etc/apache2/sites-enabled/
 
