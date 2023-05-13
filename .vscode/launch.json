@@ -12,6 +12,7 @@
             "pathMappings": {
                 "/var/www/html": "${workspaceFolder}/src"
             },
+            "hostname": "0.0.0.0",
         }
     ]
 }
