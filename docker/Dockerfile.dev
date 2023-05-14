@@ -22,6 +22,7 @@ RUN apt-get update \
 # nodeをインストール
 COPY --from=node:18.16.0 /usr/local/bin /usr/local/bin
 COPY --from=node:18.16.0 /usr/local/lib /usr/local/lib
+RUN npm update -g npm
 
 # Xdebugをインストール
 RUN pecl install xdebug \
