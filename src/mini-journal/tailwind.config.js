@@ -12,7 +12,24 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                // sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: [
+                    'ヒラギノ角ゴシック',
+                    '游ゴシック',
+                    'メイリオ',
+                    '游明朝',
+                    'リュウミン',
+                    'GEORGIA',
+                    'Helvetica',
+                    'Arial',
+                    '"Noto Sans"',
+                    '"Noto Serif"',
+                    '"M Plus 1"',
+                    '"Roboto"',
+                    'Oswald',
+                    'Montserrat',
+                    ...defaultTheme.fontFamily.sans,
+                ],
             },
         },
     },
