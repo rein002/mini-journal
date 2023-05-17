@@ -1,25 +1,23 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["resources/js/*"],
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["resources/js/*"]
+        },
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "allowJs": true,
+        "types": ["vite/client"],
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "outDir": "./public/build" // tsconfig.jsonのエラー回避のため（ビルド先はvite.config.tsにより設定されるため、この設定は実際には無効）,
     },
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "allowJs": true,
-	  "types": [
-	    "vite/client"
-	  ],
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "outDir": "./public/build" // tsconfig.jsonのエラー回避のため（ビルド先はvite.config.tsにより設定されるため、この設定は実際には無効）,
-  },
-  "include": ["resources/js/**/*"],
-  "exclude": ["node_modules", "public", ".vscode"],
+    "include": ["resources/js/**/*"],
+    "exclude": ["node_modules", "public", ".vscode"]
 }
