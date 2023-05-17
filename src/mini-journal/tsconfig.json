@@ -5,7 +5,8 @@
         "moduleResolution": "node",
         "baseUrl": "./",
         "paths": {
-            "@/*": ["resources/js/*"]
+            "@/*": ["resources/js/*"],
+            "%types/*": ["resources/ts/types/*"]
         },
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
