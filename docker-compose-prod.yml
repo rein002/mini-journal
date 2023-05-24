@@ -9,11 +9,8 @@ services:
       context: ./docker
       dockerfile: 'Dockerfile.prod'
     container_name: app
-    user: 1000:1000
     volumes:
       - ./src:/var/www/html
-      - /etc/passwd:/etc/passwd:ro
-      - /etc/group:/etc/group:ro
       - node_modules:/var/www/html/mini-journal/node_modules
 
 volumes:
