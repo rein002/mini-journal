@@ -14,6 +14,7 @@ services:
       - node_modules:/var/www/html/mini-journal/node_modules
     depends_on:
       - db
+      - mailpit
   db:
     image: mysql:8.0.30
     container_name: db
@@ -29,6 +30,11 @@ services:
       - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
       - 3306:3306
+  mailpit:
+    image: 'axllent/mailpit:latest'
+    ports:
+      - '${FORWARD_MAILPIT_PORT:-1025}:1025'
+      - '${FORWARD_MAILPIT_DASHBOARD_PORT:-8025}:8025'
 
 volumes:
   node_modules:
