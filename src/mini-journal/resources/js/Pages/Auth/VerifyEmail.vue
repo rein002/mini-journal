@@ -1,4 +1,4 @@
-<script setup>
+<script setup lamg="ts">
 import { computed } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
@@ -8,7 +8,7 @@ const props = defineProps({
   status: String,
 });
 
-const form = useForm();
+const form = useForm({});
 
 const submit = () => {
   form.post(route('verification.send'));
