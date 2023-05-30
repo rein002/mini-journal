@@ -8,6 +8,7 @@ ADD /app/000-default.conf /etc/apache2/sites-enabled/
 # ミドルウェアのインストール
 RUN apt-get update \
 && apt-get install -y \
+    sudo \
     git \
     zip \
     unzip \
@@ -28,3 +29,12 @@ RUN npm update -g npm
 # これをしておかないと、Laravelのリダイレクト処理が正しく行われなくなってしまう
 RUN mv /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled
 RUN /bin/sh -c a2enmod rewrite
+
+# コンテナ内で操作するためのユーザーを作成
+ARG DOCKER_UID=1000
+ARG DOCKER_USER=dockeruser
+ARG DOCKER_PASSWORD=dockeruser
+RUN useradd -m --uid ${DOCKER_UID} --groups sudo ${DOCKER_USER} \
+&& echo ${DOCKER_USER}:${DOCKER_PASSWORD} | chpasswd
+# sudoコマンドが実行できるように設定
+RUN echo "${DOCKER_USER} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/sudo_cus
