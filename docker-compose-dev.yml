@@ -10,6 +10,9 @@ services:
       dockerfile: 'Dockerfile.dev'
     container_name: app
     user: 1000:1000
+    extra_hosts:
+      # WSL2のLinux上からデバッグする場合はhost.docker.internalをhost-gatewayに設定する
+      - 'host.docker.internal:host-gateway'
     volumes:
       - ./src:/var/www/html
       - node_modules:/var/www/html/mini-journal/node_modules
