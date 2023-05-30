@@ -9,6 +9,7 @@ services:
       context: ./docker
       dockerfile: 'Dockerfile.prod'
     container_name: app
+    user: 1000:1000
     volumes:
       - ./src:/var/www/html
       - node_modules:/var/www/html/mini-journal/node_modules
