@@ -5,12 +5,11 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, useForm } from '@inertiajs/vue3';
-import route from 'ziggy-js';
 
-const props = defineProps({
-  email: String,
-  token: String,
-});
+const props = defineProps<{
+  email: string;
+  token: string;
+}>();
 
 const form = useForm({
   token: props.token,

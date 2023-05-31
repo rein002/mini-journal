@@ -1,5 +1,7 @@
 <script setup lang="ts">
-defineProps(['message']);
+defineProps<{
+  message?: string;
+}>();
 </script>
 
 <template>
